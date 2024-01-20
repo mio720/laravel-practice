@@ -19,4 +19,5 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// 商品情報一覧画面
+Route::get('/home', [App\Http\Controllers\ProductController::class, 'showList'])->name('home');
