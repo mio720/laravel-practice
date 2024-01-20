@@ -10,9 +10,9 @@
                 <div class="card-header">商品情報一覧画面</div>
 
                 <div class="card-body">
-                    <table class="table table-striped table-bordered align-middle" style="table-layout: fixed;">
+                    <table class="table table-striped table-bordered align-middle" style="table-layout: fixed">
                         <colgroup>
-                            <col style="width: 50px;">
+                            <col style="width: 50px">
                             <col>
                             <col>
                             <col>
