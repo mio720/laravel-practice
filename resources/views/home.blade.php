@@ -22,19 +22,19 @@
                         </colgroup>
                         <thead>
                             <tr>
-                                <th scope="col" class="text-center">ID</th>
-                                <th scope="col">商品画像</th>
-                                <th scope="col">商品名</th>
-                                <th scope="col">価格</th>
-                                <th scope="col">在庫数</th>
-                                <th scope="col">メーカー名</th>
+                                <th class="text-center">ID</th>
+                                <th>商品画像</th>
+                                <th>商品名</th>
+                                <th>価格</th>
+                                <th>在庫数</th>
+                                <th>メーカー名</th>
                                 <th class="text-center"><a href="{{ url('/regist') }}" class="btn btn-primary btn-sm">新規登録</a></th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($products as $product)
                             <tr>
-                                <th scope="row" class="text-center">{{ $product->id }}</th>
+                                <thclass="text-center">{{ $product->id }}</th>
                                 <td><img src="{{ $product->img_path }}" alt="{{ $product->product_name }}" width="100" height="100" class="img-thumbnail"></td>
                                 <td>{{ $product->product_name }}</td>
                                 <td>{{ $product->price }}</td>
