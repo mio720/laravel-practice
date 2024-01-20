@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', '商品情報一覧画面')
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -26,7 +28,7 @@
                                 <th scope="col">価格</th>
                                 <th scope="col">在庫数</th>
                                 <th scope="col">メーカー名</th>
-                                <th class="text-center"><a href="/regist" class="btn btn-primary btn-sm">新規登録</a></th>
+                                <th class="text-center"><a href="{{ url('/regist') }}" class="btn btn-primary btn-sm">新規登録</a></th>
                             </tr>
                         </thead>
                         <tbody>
