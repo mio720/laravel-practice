@@ -13,12 +13,12 @@
                     <table class="table table-striped table-bordered align-middle" style="table-layout: fixed">
                         <colgroup>
                             <col style="width: 50px">
+                            <col style="width: 118px">
                             <col>
                             <col>
                             <col>
                             <col>
-                            <col>
-                            <col>
+                            <col style="width: 120px">
                         </colgroup>
                         <thead>
                             <tr>
@@ -28,7 +28,7 @@
                                 <th>価格</th>
                                 <th>在庫数</th>
                                 <th>メーカー名</th>
-                                <th class="text-center"><a href="{{ url('/regist') }}" class="btn btn-primary btn-sm">新規登録</a></th>
+                                <th class="text-center"><a href="{{ url('/regist') }}" class="btn btn-primary text-nowrap">新規登録</a></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -42,8 +42,8 @@
                                 <td>{{ $product->company_id }}</td>
                                 <td>
                                     <div class="d-flex justify-content-center">
-                                        <a href="#" class="btn btn-outline-primary btn-sm">詳細</a>
-                                        <button class="ms-2 btn btn-outline-danger btn-sm">削除</button>
+                                        <a href="#" class="btn btn-outline-primary btn-sm text-nowrap">詳細</a>
+                                        <button class="ms-2 btn btn-outline-danger btn-sm text-nowrap">削除</button>
                                     </div>
                                 </td>
                             </tr>
