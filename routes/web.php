@@ -21,3 +21,7 @@ Auth::routes();
 
 // 商品情報一覧画面
 Route::get('/home', [App\Http\Controllers\ProductController::class, 'showList'])->name('home');
+
+//商品情報登録画面
+Route::get('/regist', [App\Http\Controllers\ProductController::class, 'showRegistForm'])->name('regist');
+Route::post('/regist',[App\Http\Controllers\ProductController::class, 'registSubmit'])->name('submit');
