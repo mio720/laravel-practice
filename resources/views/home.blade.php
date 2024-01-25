@@ -28,7 +28,7 @@
                                 <th>価格</th>
                                 <th>在庫数</th>
                                 <th>メーカー名</th>
-                                <th class="text-center"><a href="{{ url('/regist') }}" class="btn btn-primary text-nowrap">新規登録</a></th>
+                                <th class="text-center"><a href="{{ route('regist') }}" class="btn btn-primary text-nowrap">新規登録</a></th>
                             </tr>
                         </thead>
                         <tbody>

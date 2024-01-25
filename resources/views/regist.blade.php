@@ -58,7 +58,7 @@
                             <textarea id="areaComment" name="comment" class="form-control" style="height: 100px">{{ old('comment') }}</textarea>
                         </div>
                         <div class="d-flex justify-content-end">
-                            <a href="{{ url('/home') }}" class="btn btn-outline-secondary">戻る</a>
+                            <a href="{{ route('home') }}" class="btn btn-outline-secondary">戻る</a>
                             <button type="submit" class="ms-2 btn btn-primary">登録</button>
                         </div>
                     </form>
