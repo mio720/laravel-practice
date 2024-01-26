@@ -11,16 +11,14 @@ use Illuminate\Support\Facades\DB;
 class ProductController extends Controller
 {
     public function showList() {
-        // インスタンス生成
-        // 代用可能 → Product::all();
-        $model = new Product();
-        $products = $model->getList();
+        $products = Product::all();
 
         return view('home', ['products' => $products]);
     }
 
     public function showRegistForm() {
         $companies = Company::all();
+
         return view('regist', ['companies' => $companies]);
     }
 
