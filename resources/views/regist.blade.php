@@ -31,9 +31,9 @@
                             <label for="drpCompanyId" class="form-label">メーカー名 <span class="text-danger">*</span></label>
                             <select id="drpCompanyId" name="company_id" @if($errors->has('company_id')) class="form-select is-invalid" @else class="form-select" @endif">
                                 <option value=""></option>
-                                <option value="1" @if(old('company_id') === '1') selected @endif>メーカー①</option>
-                                <option value="2" @if(old('company_id') === '2') selected @endif>メーカー②</option>
-                                <option value="3" @if(old('company_id') === '3') selected @endif>メーカー③</option>
+                                @foreach ($companies as $company)
+                                <option value="{{ $company->id }}" @if ((int)old('company_id') === $company->id) selected @endif >{{ $company->company_name }}</option>
+                                @endforeach
                             </select>
                             @if($errors->has('company_id'))
                             <div class="invalid-feedback">{{ $errors->first('company_id') }}</div>

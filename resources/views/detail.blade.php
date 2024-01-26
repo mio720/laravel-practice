@@ -31,7 +31,7 @@
                     <div class="row mb-3">
                         <p class="col-sm-2 col-form-label">メーカー</p>
                         <div class="col-sm-10">
-                            <p class="form-control-plaintext">{{ $product->company_id }}</p>
+                            <p class="form-control-plaintext">{{ $product->company->company_name }}</p>
                         </div>
                     </div>
                     <div class="row mb-3">

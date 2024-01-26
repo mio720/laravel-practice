@@ -39,7 +39,7 @@
                                 <td>{{ $product->product_name }}</td>
                                 <td>{{ $product->price }}</td>
                                 <td>{{ $product->stock }}</td>
-                                <td>{{ $product->company_id }}</td>
+                                <td>{{ $product->company->company_name }}</td>
                                 <td>
                                     <div class="d-flex justify-content-center">
                                         <a href="{{ route('detail', ['id'=>$product->id]) }}" class="btn btn-outline-primary btn-sm text-nowrap">詳細</a>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Company;
 use App\Models\Product;
 use App\Http\Requests\ProductRequest;
 use Illuminate\Support\Facades\DB;
@@ -19,7 +20,8 @@ class ProductController extends Controller
     }
 
     public function showRegistForm() {
-        return view('regist');
+        $companies = Company::all();
+        return view('regist', ['companies' => $companies]);
     }
 
     public function registSubmit(ProductRequest $request) {
