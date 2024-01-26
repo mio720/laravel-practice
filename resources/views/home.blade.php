@@ -42,7 +42,7 @@
                                 <td>{{ $product->company_id }}</td>
                                 <td>
                                     <div class="d-flex justify-content-center">
-                                        <a href="#" class="btn btn-outline-primary btn-sm text-nowrap">詳細</a>
+                                        <a href="{{ route('detail', ['id'=>$product->id]) }}" class="btn btn-outline-primary btn-sm text-nowrap">詳細</a>
                                         <button class="ms-2 btn btn-outline-danger btn-sm text-nowrap">削除</button>
                                     </div>
                                 </td>

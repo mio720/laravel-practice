@@ -11,6 +11,7 @@ class ProductController extends Controller
 {
     public function showList() {
         // インスタンス生成
+        // 代用可能 → Product::all();
         $model = new Product();
         $products = $model->getList();
 
@@ -37,5 +38,11 @@ class ProductController extends Controller
 
         // 処理が完了したらhomeにリダイレクト
         return redirect(route('home'));
+    }
+
+    public function showDetail($id) {
+        $product = Product::find($id);
+
+        return view('detail', ['product' => $product]);
     }
 }
