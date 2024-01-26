@@ -43,13 +43,13 @@
                     <div class="row mb-3">
                         <p class="col-sm-2 col-form-label">在庫数</p>
                         <div class="col-sm-10">
-                            <p class="form-control-plaintext">¥{{ $product->stock }}</p>
+                            <p class="form-control-plaintext">{{ $product->stock }}</p>
                         </div>
                     </div>
                     <div class="row mb-3">
                         <p class="col-sm-2 col-form-label">コメント</p>
                         <div class="col-sm-10">
-                            <p class="form-control-plaintext">¥{{ $product->comment }}</p>
+                            <p class="form-control-plaintext">{{ $product->comment }}</p>
                         </div>
                     </div>
                     <div class="d-flex justify-content-end">
