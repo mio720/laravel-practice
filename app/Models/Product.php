@@ -14,13 +14,6 @@ class Product extends Model
         return $this->belongsTo(Company::class);
     }
 
-    public function getList() {
-        // productsテーブルからデータを取得
-        $products = DB::table('products')->get();
-
-        return $products;
-    }
-
     public function registProduct($data) {
         DB::table('products')->insert([
             'company_id' => $data->company_id,
