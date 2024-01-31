@@ -45,4 +45,28 @@ class ProductController extends Controller
 
         return view('detail', ['product' => $product]);
     }
+
+    public function showEdit($id) {
+        $product = Product::find($id);
+        $companies = Company::all();
+
+        return view('edit', ['product' => $product, 'companies' => $companies]);
+    }
+
+    public function submitEditForm(ProductRequest $request, $id) {
+        // トランザクション開始
+        DB::beginTransaction();
+
+        try {
+            // 登録処理呼び出し
+            $model = new Product();
+            $model->editProduct($request);
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollback();
+            return back();
+        }
+
+        return redirect()->route('detail', ['id' => $id]);
+    }
 }

@@ -54,7 +54,7 @@
                     </div>
                     <div class="d-flex justify-content-end">
                         <a href="{{ route('home') }}" class="btn btn-outline-secondary">戻る</a>
-                        <a href="{{ route('home') }}" class="ms-2 btn btn-primary">編集</a>
+                        <a href="{{ route('edit', ['id'=>$product->id]) }}" class="ms-2 btn btn-primary">編集</a>
                     </div>
                 </div>
             </div>

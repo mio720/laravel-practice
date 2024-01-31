@@ -24,4 +24,15 @@ class Product extends Model
             'img_path' => $data->img_path,
         ]);
     }
+
+    public function editProduct($data) {
+        DB::table('products')->where('id', $data->id)->update([
+            'company_id' => $data->company_id,
+            'product_name' => $data->product_name,
+            'price' => $data->price,
+            'stock' => $data->stock,
+            'comment' => $data->comment,
+            'img_path' => $data->img_path,
+        ]);
+    }
 }
