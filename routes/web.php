@@ -24,11 +24,11 @@ Route::get('/home', [App\Http\Controllers\ProductController::class, 'showList'])
 
 // 商品情報登録画面
 Route::get('/regist', [App\Http\Controllers\ProductController::class, 'showRegistForm'])->name('regist');
-Route::post('/regist',[App\Http\Controllers\ProductController::class, 'registSubmit'])->name('submit');
+Route::post('/regist',[App\Http\Controllers\ProductController::class, 'submitRegistForm'])->name('submit');
 
 // 商品情報詳細画面
 Route::get('/detail/{id}', [App\Http\Controllers\ProductController::class, 'showDetail'])->name('detail');
 
 // 商品情報編集画面
-Route::get('/edit/{id}', [App\Http\Controllers\ProductController::class, 'showEdit'])->name('edit');
+Route::get('/edit/{id}', [App\Http\Controllers\ProductController::class, 'showEditForm'])->name('edit');
 Route::post('/edit/{id}',[App\Http\Controllers\ProductController::class, 'submitEditForm'])->name('update');

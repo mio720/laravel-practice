@@ -22,7 +22,7 @@ class ProductController extends Controller
         return view('regist', ['companies' => $companies]);
     }
 
-    public function registSubmit(ProductRequest $request) {
+    public function submitRegistForm(ProductRequest $request) {
         // トランザクション開始
         DB::beginTransaction();
 
@@ -46,7 +46,7 @@ class ProductController extends Controller
         return view('detail', ['product' => $product]);
     }
 
-    public function showEdit($id) {
+    public function showEditForm($id) {
         $product = Product::find($id);
         $companies = Company::all();
 
