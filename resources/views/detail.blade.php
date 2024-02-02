@@ -19,7 +19,7 @@
                     <div class="row mb-3">
                         <p class="col-sm-2 col-form-label">商品画像</p>
                         <div class="col-sm-10">
-                            <p class="form-control-plaintext"><img src="{{ $product->img_path }}" class="img-thumbnail"></p>
+                            <p class="form-control-plaintext"><img src="{{ asset($product->img_path) }}" class="img-thumbnail"></p>
                         </div>
                     </div>
                     <div class="row mb-3">

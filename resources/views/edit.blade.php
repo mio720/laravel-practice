@@ -10,7 +10,7 @@
                 <div class="card-header">商品情報編集画面</div>
 
                 <div class="card-body">
-                    <form action="{{ route('update', ['id'=>$product->id]) }}" method="post">
+                    <form action="{{ route('update', ['id'=>$product->id]) }}" method="post" enctype="multipart/form-data">
                         @csrf
 
                         <div class="row mb-3">

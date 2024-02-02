@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Company;
 use App\Models\Product;
 use App\Http\Requests\ProductRequest;
+use App\Library\ProductImgPath;
 use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
@@ -23,13 +24,15 @@ class ProductController extends Controller
     }
 
     public function submitRegistForm(ProductRequest $request) {
+        $img_path = ProductImgPath::getImgPath($request->file('img_path'), $request->id);
+
         // トランザクション開始
         DB::beginTransaction();
 
         try {
             // 登録処理呼び出し
             $model = new Product();
-            $model->registProduct($request);
+            $model->registProduct($request, $img_path);
             DB::commit();
         } catch (\Exception $e) {
             DB::rollback();
@@ -54,13 +57,15 @@ class ProductController extends Controller
     }
 
     public function submitEditForm(ProductRequest $request, $id) {
+        $img_path = ProductImgPath::getImgPath($request->file('img_path'), $request->id);
+
         // トランザクション開始
         DB::beginTransaction();
 
         try {
             // 登録処理呼び出し
             $model = new Product();
-            $model->editProduct($request);
+            $model->editProduct($request, $img_path);
             DB::commit();
         } catch (\Exception $e) {
             DB::rollback();

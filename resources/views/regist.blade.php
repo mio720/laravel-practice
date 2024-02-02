@@ -10,7 +10,7 @@
                 <div class="card-header">商品情報登録画面</div>
 
                 <div class="card-body">
-                    <form action="{{ route('submit') }}" method="post" class="row g-3">
+                    <form action="{{ route('submit') }}" method="post" enctype="multipart/form-data" class="row g-3">
                         @csrf
 
                         <div class="col-md-6">

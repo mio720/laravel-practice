@@ -14,25 +14,25 @@ class Product extends Model
         return $this->belongsTo(Company::class);
     }
 
-    public function registProduct($data) {
+    public function registProduct($data, $img_path) {
         DB::table('products')->insert([
             'company_id' => $data->company_id,
             'product_name' => $data->product_name,
             'price' => $data->price,
             'stock' => $data->stock,
             'comment' => $data->comment,
-            'img_path' => $data->img_path,
+            'img_path' => $img_path,
         ]);
     }
 
-    public function editProduct($data) {
+    public function editProduct($data, $img_path) {
         DB::table('products')->where('id', $data->id)->update([
             'company_id' => $data->company_id,
             'product_name' => $data->product_name,
             'price' => $data->price,
             'stock' => $data->stock,
             'comment' => $data->comment,
-            'img_path' => $data->img_path,
+            'img_path' => $img_path,
         ]);
     }
 
