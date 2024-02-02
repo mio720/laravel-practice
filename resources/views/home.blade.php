@@ -43,7 +43,10 @@
                                 <td>
                                     <div class="d-flex justify-content-center">
                                         <a href="{{ route('detail', ['id'=>$product->id]) }}" class="btn btn-outline-primary btn-sm text-nowrap">詳細</a>
-                                        <button class="ms-2 btn btn-outline-danger btn-sm text-nowrap">削除</button>
+                                        <form action="{{ route('delete', ['id'=>$product->id]) }}" method="post">
+                                            @csrf
+                                            <button type="submit" class="ms-2 btn btn-outline-danger btn-sm text-nowrap">削除</button>
+                                        </form>
                                     </div>
                                 </td>
                             </tr>

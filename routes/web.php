@@ -21,6 +21,7 @@ Auth::routes();
 
 // 商品情報一覧画面
 Route::get('/home', [App\Http\Controllers\ProductController::class, 'showList'])->name('home');
+Route::post('/delete/{id}',[App\Http\Controllers\ProductController::class, 'submitDeleteButton'])->name('delete');
 
 // 商品情報登録画面
 Route::get('/regist', [App\Http\Controllers\ProductController::class, 'showRegistForm'])->name('regist');

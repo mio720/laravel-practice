@@ -69,4 +69,19 @@ class ProductController extends Controller
 
         return redirect()->route('detail', ['id' => $id]);
     }
+
+    public function submitDeleteButton($id) {
+        DB::beginTransaction();
+
+        try {
+            $model = new Product();
+            $model->deleteProduct($id);
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollback();
+            return back();
+        }
+
+        return redirect()->route('home');
+    }
 }
