@@ -26,14 +26,24 @@ class Product extends Model
     }
 
     public function editProduct($data, $img_path) {
-        DB::table('products')->where('id', $data->id)->update([
-            'company_id' => $data->company_id,
-            'product_name' => $data->product_name,
-            'price' => $data->price,
-            'stock' => $data->stock,
-            'comment' => $data->comment,
-            'img_path' => $img_path,
-        ]);
+        if ($img_path) {
+            DB::table('products')->where('id', $data->id)->update([
+                'company_id' => $data->company_id,
+                'product_name' => $data->product_name,
+                'price' => $data->price,
+                'stock' => $data->stock,
+                'comment' => $data->comment,
+                'img_path' => $img_path,
+            ]);
+        } else {
+            DB::table('products')->where('id', $data->id)->update([
+                'company_id' => $data->company_id,
+                'product_name' => $data->product_name,
+                'price' => $data->price,
+                'stock' => $data->stock,
+                'comment' => $data->comment,
+            ]);
+        }
     }
 
     public function deleteProduct($id) {
