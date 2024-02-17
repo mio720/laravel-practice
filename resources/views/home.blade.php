@@ -10,6 +10,26 @@
                 <div class="card-header">商品情報一覧画面</div>
 
                 <div class="card-body">
+                    <form action="{{ route('home') }}" method="get">
+                        <div class="row g-3 mb-3">
+                            <div class="col-sm-6">
+                                <input type="text" name="search_keyword" class="form-control" value="{{ request('search_keyword') }}" placeholder="検索キーワード">
+                            </div>
+                            <div class="col-sm-4">
+                                <select name="search_company_id" class="form-select">
+                                    <option value="">メーカー名</option>
+                                    @foreach ($companies as $company)
+                                    <option value="{{ $company->id }}" @if ((int)request('search_company_id') === $company->id) selected @endif >{{ $company->company_name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-secondary text-nowrap">検索</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                     <table class="table table-striped table-bordered align-middle" style="table-layout: fixed">
                         <colgroup>
                             <col style="width: 50px">

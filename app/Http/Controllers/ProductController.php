@@ -11,10 +11,19 @@ use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
-    public function showList() {
-        $products = Product::all();
+    public function showList(Request $request) {
+        $companies = Company::all();
 
-        return view('home', ['products' => $products]);
+        $query = Product::query();
+        if ($keyword = $request->search_keyword) {
+            $query->where('product_name', 'LIKE', "%{$keyword}%");
+        }
+        if ($company_id = $request->search_company_id) {
+            $query->where('company_id', $company_id);
+        }
+        $products = $query->paginate(30);
+
+        return view('home', ['companies' => $companies, 'products' => $products]);
     }
 
     public function showRegistForm() {
