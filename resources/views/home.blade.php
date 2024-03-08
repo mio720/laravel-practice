@@ -13,10 +13,10 @@
                     <form action="{{ route('home') }}" method="get">
                         <div class="row g-3 mb-3">
                             <div class="col-sm-6">
-                                <input type="text" name="search_keyword" class="form-control" value="{{ request('search_keyword') }}" placeholder="検索キーワード">
+                                <input type="text" name="search_keyword" class="form-control js-search-keyword" value="{{ request('search_keyword') }}" placeholder="検索キーワード">
                             </div>
                             <div class="col-sm-4">
-                                <select name="search_company_id" class="form-select">
+                                <select name="search_company_id" class="form-select js-search-company-id">
                                     <option value="">メーカー名</option>
                                     @foreach ($companies as $company)
                                     <option value="{{ $company->id }}" @if ((int)request('search_company_id') === $company->id) selected @endif >{{ $company->company_name }}</option>
@@ -25,7 +25,7 @@
                             </div>
                             <div class="col-sm-2">
                                 <div class="d-grid">
-                                    <button type="submit" class="btn btn-secondary text-nowrap">検索</button>
+                                    <button type="button" class="btn btn-secondary text-nowrap js-search-button">検索</button>
                                 </div>
                             </div>
                         </div>

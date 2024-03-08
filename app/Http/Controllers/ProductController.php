@@ -11,19 +11,24 @@ use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
-    public function showList(Request $request) {
+    public function showList() {
         $companies = Company::all();
-
-        $query = Product::query();
-        if ($keyword = $request->search_keyword) {
-            $query->where('product_name', 'LIKE', "%{$keyword}%");
-        }
-        if ($company_id = $request->search_company_id) {
-            $query->where('company_id', $company_id);
-        }
-        $products = $query->paginate(30);
+        $products = Product::all();
 
         return view('home', ['companies' => $companies, 'products' => $products]);
+    }
+
+    public function getProductsBySearchConditions(Request $request) {
+        $query = Product::query();
+        if ($keyword = $request->keyword) {
+            $query->where('product_name', 'LIKE', "%{$keyword}%");
+        }
+        if ($company_id = $request->company_id) {
+            $query->where('company_id', $company_id);
+        }
+        $products = $query->get();
+
+        return response()->json($products);
     }
 
     public function showRegistForm() {
