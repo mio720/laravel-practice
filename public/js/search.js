@@ -1,5 +1,12 @@
 $(function () {
     const $searchButton = $('.js-search-button');
+    const $productTable = $('.js-product-table');
+
+    $productTable.tablesorter({
+        headers: {
+            '.js-tablesorter-exclusion': { sorter: false }
+        }
+    });
 
     $searchButton.on('click', function () {
         const keyword = $('.js-search-keyword').val();
@@ -16,6 +23,8 @@ $(function () {
         })
         .done((data) => {
             console.log(data);
+
+            $productTable.trigger("update");
         })
         .fail(() => {
             console.log('failure');

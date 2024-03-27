@@ -30,7 +30,7 @@
                             </div>
                         </div>
                     </form>
-                    <table class="table table-striped table-bordered align-middle" style="table-layout: fixed">
+                    <table class="table table-striped table-bordered align-middle js-product-table" style="table-layout: fixed">
                         <colgroup>
                             <col style="width: 50px">
                             <col style="width: 118px">
@@ -43,12 +43,12 @@
                         <thead>
                             <tr>
                                 <th class="text-center">ID</th>
-                                <th>商品画像</th>
+                                <th class="js-tablesorter-exclusion">商品画像</th>
                                 <th>商品名</th>
                                 <th>価格</th>
                                 <th>在庫数</th>
                                 <th>メーカー名</th>
-                                <th class="text-center"><a href="{{ route('regist') }}" class="btn btn-primary text-nowrap">新規登録</a></th>
+                                <th class="text-center js-tablesorter-exclusion"><a href="{{ route('regist') }}" class="btn btn-primary text-nowrap">新規登録</a></th>
                             </tr>
                         </thead>
                         <tbody>
